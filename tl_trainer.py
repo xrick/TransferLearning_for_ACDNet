@@ -10,7 +10,7 @@ sys.path.append(os.getcwd());
 sys.path.append(os.path.join(os.getcwd(), 'common'));
 import common.utils as U;
 import common.opts as opts;
-import resources.models as models;
+import resources.TLModels as tlmodels;
 import resources.train_generator as train_generator;
 
 #Every run is producing very close accuracy.
@@ -18,13 +18,14 @@ import resources.train_generator as train_generator;
 #For reproducibility in tensorflow you need to set operation level seed in addition to graph-level seed.
 #Look at: https://stackoverflow.com/questions/38469632/tensorflow-non-repeatable-results
 
-class TF_Trainer:
+class TLTrainer:
     def __init__(self, opt=None):
         self.opt = opt;
         self.trainGen = train_generator.setup(self.opt, self.opt.split);
 
     def Train(self):
-        model = models.GetAcdnetModel(self.opt.inputLength, 50, self.opt.sr, ch_config = self.opt.model_config);
+        # model = tlmodels.GetAcdnetModel(self.opt.inputLength, 50, self.opt.sr, ch_config = self.opt.model_config);
+        model  = tlmodels.Get
         model.summary();
 
         loss = 'kullback_leibler_divergence';

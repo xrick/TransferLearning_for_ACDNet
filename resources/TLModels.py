@@ -38,6 +38,11 @@ class TLACDNet:
 		print("\n")
 		return new_model
 
+def GetTLACDNet(pretrained_model_path=None,opt=None, num_class=11):
+	trainedModelPath = "pretrained_models/acdnet20_20khz_fold4.h5"
+	tlacdnet = TLACDNet(pretrained_model_path=trainedModelPath, opt=opt, )
+	return tlacdnet.Create_TLACDNet()
+
 
 
 
