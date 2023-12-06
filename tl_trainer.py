@@ -123,34 +123,36 @@ class CustomCallback(keras.callbacks.Callback):
 
 if __name__ == '__main__':
     opt = opts.parse();
-    opt.sr = 20000;
+    opt.sr = 16000#20000;
     opt.inputLength = 30225;
     import torch;
     opt.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu");
     valid_path = False;
-    while not valid_path:
-        model_path = input("Enter pytorch model path to be re-built and trained in Tensorflow\n:");
-        file_paths = glob.glob(os.path.join(os.getcwd(), model_path));
-        if len(file_paths)>0 and os.path.isfile(file_paths[0]):
-            state = torch.load(file_paths[0], map_location=opt.device);
-            opt.model_config = state['config'];
-            opt.model_path = file_paths[0];
-            print('Model has been found at: {}'.format(opt.model_path));
-            valid_path = True;
+    # while not valid_path:
+    #     model_path = input("Enter the pretrained model path for transfer learning")
+    # while not valid_path:
+    #     model_path = input("Enter pytorch model path to be re-built and trained in Tensorflow\n:");
+    #     file_paths = glob.glob(os.path.join(os.getcwd(), model_path));
+    #     if len(file_paths)>0 and os.path.isfile(file_paths[0]):
+    #         state = torch.load(file_paths[0], map_location=opt.device);
+    #         opt.model_config = state['config'];
+    #         opt.model_path = file_paths[0];
+    #         print('Model has been found at: {}'.format(opt.model_path));
+    #         valid_path = True;
 
-    valid_model_name = False;
-    while not valid_model_name:
-        model_name = input('Enter a name that will be used to save the trained model: ');
-        if model_name != '':
-            opt.model_name = model_name;
-            valid_model_name = True;
+    # valid_model_name = False;
+    # while not valid_model_name:
+    #     model_name = input('Enter a name that will be used to save the trained model: ');
+    #     if model_name != '':
+    #         opt.model_name = model_name;
+    #         valid_model_name = True;
 
-    valid_fold = False;
-    while not valid_fold:
-        fold = input("Which fold do you want your model to be Validated:\n 1. Fold-1\n 2. Fold-2\n 3. Fold-3\n 4. Fold-4\n 5. Fold-5\n :")
-        if fold in ['1','2','3','4','5']:
-            opt.split = int(fold);
-            valid_fold = True;
+    # valid_fold = False;
+    # while not valid_fold:
+    #     fold = input("Which fold do you want your model to be Validated:\n 1. Fold-1\n 2. Fold-2\n 3. Fold-3\n 4. Fold-4\n 5. Fold-5\n :")
+    #     if fold in ['1','2','3','4','5']:
+    #         opt.split = int(fold);
+    #         valid_fold = True;
 
     trainer = Trainer(opt);
     trainer.Train();

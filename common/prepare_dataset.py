@@ -14,19 +14,19 @@ import wavio
 
 def main():
     mainDir = os.getcwd();
-    esc50_path = os.path.join(mainDir, 'datasets/esc50');
+    ueciot10_path = os.path.join(mainDir, 'datasetss/processed_data/');
 
-    if not os.path.exists:
-        os.mkdir(esc50_path)
+    # if not os.path.exists:
+    #     os.mkdir(esc50_path)
 
-    sr_list = [44100, 20000];
+    sr_list = [16000]#[44100, 20000];
 
     # Download ESC-50
-    subprocess.call('wget -P {} https://github.com/karoldvl/ESC-50/archive/master.zip'.format(
-        esc50_path), shell=True);
-    subprocess.call('unzip -d {} {}'.format(
-        esc50_path, os.path.join(esc50_path, 'master.zip')), shell=True);
-    os.remove(os.path.join(esc50_path, 'master.zip'));
+    # subprocess.call('wget -P {} https://github.com/karoldvl/ESC-50/archive/master.zip'.format(
+    #     esc50_path), shell=True);
+    # subprocess.call('unzip -d {} {}'.format(
+    #     esc50_path, os.path.join(esc50_path, 'master.zip')), shell=True);
+    # os.remove(os.path.join(esc50_path, 'master.zip'));
 
     # Convert sampling rate
     for sr in sr_list:

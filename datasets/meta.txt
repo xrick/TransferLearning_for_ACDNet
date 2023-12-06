@@ -1,0 +1,13 @@
+uec-iot-10 dataset
+
+pouring_water:17
+
+toilet_flushing:18
+
+coughing:24
+
+whistling_kettle:51
+
+fire alarm:52
+
+boiling water:53
