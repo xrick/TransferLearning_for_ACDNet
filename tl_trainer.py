@@ -61,7 +61,7 @@ class CustomCallback(keras.callbacks.Callback):
 
     def on_epoch_begin(self, epoch, logs=None):
         self.curEpoch = epoch+1;
-        self.curLr = Trainer(self.opt).GetLR(epoch+1);
+        self.curLr = TLTrainer(self.opt).GetLR(epoch+1);
         self.cur_epoch_start_time = time.time();
 
     def on_epoch_end(self, epoch, logs=None):
