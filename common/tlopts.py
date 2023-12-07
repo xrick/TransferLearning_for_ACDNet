@@ -24,7 +24,7 @@ def parse():
 
     #Basic Net Settings
     opt.nClasses = 6#50;
-    opt.nFolds = 5;
+    opt.nFolds = 1;#5;
     opt.splits = [i for i in range(1, opt.nFolds + 1)];
     opt.sr = 16000#20000;
     opt.inputLength = 30225;
@@ -45,5 +45,6 @@ def display_info(opt):
     print('| schedule : {}'.format(opt.schedule));
     print('| warmup   : {}'.format(opt.warmup));
     print('| batchSize: {}'.format(opt.batchSize));
+    print('| nFolds: {}'.format(opt.nFolds));
     print('| Splits: {}'.format(opt.splits));
     print('+------------------------------+');

@@ -1,13 +1,13 @@
 uec-iot-10 dataset
+sound name : original label -- map index in training process
+pouring_water:17 -- 1
 
-pouring_water:17
+toilet_flushing:18 -- 2
 
-toilet_flushing:18
+coughing:24 -- 3
 
-coughing:24
+whistling_kettle:51 -- 4
 
-whistling_kettle:51
+fire alarm:52 -- 5
 
-fire alarm:52
-
-boiling water:53
+boiling water:53 -- 6

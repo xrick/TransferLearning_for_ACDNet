@@ -5,13 +5,13 @@ import tensorflow.keras.layers as L
 import numpy as np
 
 class TLACDNet:
-	def __init__(self, pretrained_model_path=None,opt=None, num_class=11):
+	def __init__(self, pretrained_model_path=None,opt=None, num_class=6):
 		self.opt = opt
 		self.pretrained_model_path = pretrained_model_path
 		self.new_model = None
 		self.num_class = num_class
 
-	def Create_TLACDNet():
+	def Create_TLACDNet(self):
 		model = load_model(self.pretrained_model_path)
 		print(f"original model loaded....")
 		# for l in model.layers:
@@ -28,9 +28,9 @@ class TLACDNet:
 			model.layers[j].trainable = True
 
 		custom_layers = model.layers[freeze_layers_num-1].output
-		custom_layers = Dense(num_classes)(custom_layers)
+		custom_layers = L.Dense(self.num_class)(custom_layers)
 		# custom_layers = Softmax()(custom_layers)
-		custom_layers = Dense(num_classes,activation="softmax")(custom_layers)
+		custom_layers = L.Dense(self.num_class,activation="softmax")(custom_layers)
 
 		new_model = Model(inputs=model.input,outputs=custom_layers)
 		print("new model info:\n")
@@ -38,9 +38,9 @@ class TLACDNet:
 		print("\n")
 		return new_model
 
-def GetTLACDNet(pretrained_model_path=None,opt=None, num_class=11):
-	trainedModelPath = "pretrained_models/acdnet20_20khz_fold4.h5"
-	tlacdnet = TLACDNet(pretrained_model_path=trainedModelPath, opt=opt, )
+def GetTLACDNet(pretrained_model_path=None,opt=None, num_class=6):
+	trainedModelPath = pretrained_model_path
+	tlacdnet = TLACDNet(trainedModelPath, opt, num_class)
 	return tlacdnet.Create_TLACDNet()
 
 
