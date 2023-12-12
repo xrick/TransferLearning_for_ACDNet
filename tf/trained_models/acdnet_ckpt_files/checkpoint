@@ -1,0 +1,2 @@
+model_checkpoint_path: "acdnet_tl_ckpt_model.ckpt-1"
+all_model_checkpoint_paths: "acdnet_tl_ckpt_model.ckpt-1"
