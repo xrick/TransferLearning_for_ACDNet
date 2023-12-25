@@ -3,10 +3,19 @@ import os;
 import glob;
 import torch;
 
-sys.path.append(os.getcwd());
-sys.path.append(os.path.join(os.getcwd(), 'common'));
-sys.path.append(os.path.join(os.getcwd(), 'torch'));
-sys.path.append(os.path.join(os.getcwd(), 'resources'));
+# sys.path.append(os.getcwd());
+
+curdir = os.getcwd()
+print(curdir)
+lastdir = curdir[:curdir.rfind("/")]
+sys.path.append(lastdir)
+sys.path.append("../common");
+sys.path.append("../torch");
+sys.path.append("../resources");
+# sys.path.append(os.path.join(lastdir, 'common'));
+# sys.path.append(os.path.join(lastdir, 'torch'));
+# sys.path.append(os.path.join(lastdir, 'resources'));
+
 import common.opts as opts;
 import resources.models as models;
 
