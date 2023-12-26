@@ -25,7 +25,7 @@ def parse():
     #Basic Net Settings
     opt.nClasses = 6#50;
     opt.nFolds = 1;#5;
-    opt.splits = [i for i in range(1, opt.nFolds + 1)];
+    opt.split = [i for i in range(1, opt.nFolds + 1)];
     opt.sr = 16000#20000;
     opt.inputLength = 30225;
 
