@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../RLRepo/CodeRepo/SED_Repo/ACDNet/acdnet-master/deployment"
+		},
+		{
+			"path": "../M5Core2RefData/TFLite_Micro_MicroSpeech_M5Stack"
+		}
+	],
+	"settings": {}
+}
