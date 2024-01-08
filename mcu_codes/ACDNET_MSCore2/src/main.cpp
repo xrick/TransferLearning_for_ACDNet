@@ -39,7 +39,7 @@ void setup(){
   static tflite::MicroErrorReporter micro_error_reporter;
   error_reporter = &micro_error_reporter;
   featureProvider = new NeuralNetworkFeatureProvider();
-  model = tflite::GetModel(g_model_tflite);
+  model = tflite::GetModel(acdnet_model_name);
   if (model->version() != TFLITE_SCHEMA_VERSION) {
     error_reporter->Report(
         "Model provided is schema version %d not equal "
@@ -48,8 +48,8 @@ void setup(){
     return;
   }
   {
-    printf("MODEL:         %s\n", g_model_name);
-    printf("MODEL SIZE:    %d\n", g_model_tflite_len);
+    printf("MODEL:         %s\n", acdnet_model_name);
+    printf("MODEL SIZE:    %d\n", acdnet_model_len);
     printf("FEATURE_WIDTH: %d\n", g_feature_size);
     printf("FEATURE_PATH:  %s\n", FEATURE_PATH);
 
@@ -170,7 +170,7 @@ bool logResults(uint32_t feature_number, TfLiteTensor* output, uint32_t duration
         exit(1);
     }
 
-    fprintf(log, "MODEL: %s, ", g_model_name);
+    fprintf(log, "MODEL: %s, ", acdnet_model_name);
 
     for (size_t i = 0; i < output_dimensions; i++) {
         fprintf(log, "%d, ", output->data.int8[i]);

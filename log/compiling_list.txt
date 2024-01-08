@@ -1,0 +1,620 @@
+Dependency Graph
+|-- TensorFlowLite_ESP32 @ 1.0.0
+|-- M5Core2 @ 0.1.8
+Building in release mode
+Compiling .pio/build/m5stack-core2/src/main.cpp.o
+Compiling .pio/build/m5stack-core2/src/model.cc.o
+Compiling .pio/build/m5stack-core2/src/model_bak_20231229.cc.o
+Compiling .pio/build/m5stack-core2/src/nn_score.cc.o
+Building .pio/build/m5stack-core2/bootloader.bin
+Generating partitions .pio/build/m5stack-core2/partitions.bin
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 1 ELF section
+Successfully created esp32 image.
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/bus/i2c_bus.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/bus/i2s_lcd_esp32_driver.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/bus/i2s_lcd_esp32s2_driver.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/bus/spi_bus.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ili9341/ili9341.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ili9486/ili9486.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ili9488/ili9488.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ili9806/ili9806.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/nt35510/nt35510.c.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c: In function 'lcd_ili9341_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c:179:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(LCD_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c: In function 'lcd_ili9341_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c:204:12: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_CMD(LCD_CASET);
+            ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c:205:12: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'LCD_SWRESET'? [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_DATA(x0 >> 8);
+            ^~~~~~~~~~~~~~
+            LCD_SWRESET
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c: In function 'lcd_ili9341_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c:230:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/rm68120/rm68120.c.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c: In function 'lcd_ili9341_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c:248:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c: In function 'lcd_ili9488_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c:244:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(ILI9488_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9341/ili9341.c:256:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ssd1306/ssd1306.c.o
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c: In function 'lcd_ili9488_set_invert':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c:264:12: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     return LCD_WRITE_CMD(is_invert ? ILI9488_INVON : ILI9488_INVOFF);
+            ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c: In function 'lcd_ili9488_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c:275:12: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'SPI_FWRITE_DIO'? [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_DATA(x0 >> 8);
+            ^~~~~~~~~~~~~~
+            SPI_FWRITE_DIO
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c: In function 'lcd_ili9488_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c:295:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ssd1307/ssd1307.c.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c: In function 'lcd_ili9486_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c:176:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(ILI9486_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c: In function 'lcd_ili9488_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c:313:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c: In function 'lcd_ili9486_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c:201:12: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_CMD(ILI9486_CASET);
+            ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c: In function 'lcd_ili9806_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c:178:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(ILI9806_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ssd1322/ssd1322.c.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c: In function 'lcd_ili9806_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c:203:12: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_CMD(ILI9806_CASET);
+            ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c:202:12: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'SPI_FWRITE_DIO'? [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_DATA(x0 >> 8);
+            ^~~~~~~~~~~~~~
+            SPI_FWRITE_DIO
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9488/ili9488.c:321:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c: In function 'lcd_ili9486_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c:222:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c:204:12: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'SPI_FWRITE_DIO'? [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_DATA(x0 >> 8);
+            ^~~~~~~~~~~~~~
+            SPI_FWRITE_DIO
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c: In function 'lcd_ili9806_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c:225:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ssd1351/ssd1351.c.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c: In function 'lcd_ili9486_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c:240:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c: In function 'lcd_ili9806_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c:243:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9806/ili9806.c:251:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c: In function 'lcd_rm68120_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c:179:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(RM68120_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ili9486/ili9486.c:248:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c: In function 'lcd_rm68120_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c:213:12: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_CMD(RM68120_RAMWR);
+            ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c: In function 'lcd_rm68120_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c:223:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c: In function 'lcd_nt35510_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c:179:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(NT35510_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c: In function 'lcd_nt35510_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c:213:12: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_CMD(NT35510_RAMWR);
+            ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c: In function 'lcd_nt35510_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c:223:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c: In function 'lcd_rm68120_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c:241:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/rm68120/rm68120.c:249:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c: In function 'lcd_nt35510_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c:241:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1307/ssd1307.c: In function 'lcd_ssd1307_init':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1307/ssd1307.c:134:5: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     LCD_WRITE_CMD(0xAE); //--turn off oled panel
+     ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1322/ssd1322.c: In function 'lcd_ssd1322_init':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1322/ssd1322.c:109:5: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     LCD_WRITE_CMD(SSD1322_SETCOMMANDLOCK);// 0xFD
+     ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1306/ssd1306.c: In function 'lcd_ssd1306_init':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1306/ssd1306.c:132:5: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     LCD_WRITE_CMD(0xAE); //--turn off oled panel
+     ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/nt35510/nt35510.c:249:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1322/ssd1322.c:110:5: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'SPI_FWRITE_DIO'? [-Wimplicit-function-declaration]
+     LCD_WRITE_DATA(0x12);// Unlock OLED driver IC
+     ^~~~~~~~~~~~~~
+     SPI_FWRITE_DIO
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1322/ssd1322.c: In function 'lcd_ssd1322_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1322/ssd1322.c:277:11: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE(p, w * LCD_BPP / 8 * h);
+           ^~~~~~~~~
+           REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1307/ssd1307.c: In function 'lcd_ssd1307_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1307/ssd1307.c:267:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1307/ssd1307.c:273:11: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE(p, w * LCD_BPP / 8 * h);
+           ^~~~~~~~~
+           REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1307/ssd1307.c:274:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1306/ssd1306.c: In function 'lcd_ssd1306_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1306/ssd1306.c:265:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1306/ssd1306.c:271:11: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE(p, w * LCD_BPP / 8 * h);
+           ^~~~~~~~~
+           REG_WRITE
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/ssd1963/ssd1963.c.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1306/ssd1306.c:272:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/st7789/st7789.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/controller_driver/st7796/st7796.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/interface_driver/scr_interface_driver.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/screen_driver.c.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c: In function 'lcd_ssd1351_init':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c:122:5: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     LCD_WRITE_CMD(SSD1351_CMD_COMMANDLOCK);// Set command lock, 1 arg
+     ^~~~Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/screen/screen_utility/screen_utility.c.o
+~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c:123:5: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'SPI_FWRITE_DIO'? [-Wimplicit-function-declaration]
+     LCD_WRITE_DATA(0x12);
+     ^~~~~~~~~~~~~~
+     SPI_FWRITE_DIO
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c: In function 'lcd_ssd1351_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c:287:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c: In function 'lcd_st7789_init_reg':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c:77:5: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     LCD_WRITE_CMD(0x3A);
+     ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c:78:5: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'LCD_SWRESET'? [-Wimplicit-function-declaration]
+     LCD_WRITE_DATA(0x05);
+     ^~~~~~~~~~~~~~
+     LCD_SWRESET
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/c/common.cpp.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c: In function 'lcd_st7789_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c:252:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(LCD_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c: In function 'lcd_ssd1963_set_rotation':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c:189:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(SSD1963_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c: In function 'lcd_st7789_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c:298:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c: In function 'lcd_ssd1963_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c:214:5: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     LCD_WRITE_CMD(SSD1963_CASET);
+     ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c: In function 'lcd_ssd1351_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c:305:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c: In function 'lcd_st7796_set_rotation':
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/core/api/error_reporter.cpp.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c:184:11: warning: implicit declaration of function 'LCD_WRITE_REG'; did you mean 'LCD_DATA_LEV'? [-Wimplicit-function-declaration]
+     ret = LCD_WRITE_REG(LCD_MADCTL, reg_data);
+           ^~~~~~~~~~~~~
+           LCD_DATA_LEV
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c:215:5: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'SPI_FWRITE_DIO'? [-Wimplicit-function-declaration]
+     LCD_WRITE_DATA(x0 >> 8);
+     ^~~~~~~~~~~~~~
+     SPI_FWRITE_DIO
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c: In function 'lcd_ssd1963_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c:235:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c: In function 'lcd_st7789_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c:321:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c: In function 'lcd_st7796_set_window':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c:209:12: warning: implicit declaration of function 'LCD_WRITE_CMD' [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_CMD(LCD_CASET);
+            ^~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1351/ssd1351.c:313:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c:210:12: warning: implicit declaration of function 'LCD_WRITE_DATA'; did you mean 'LCD_SWRESET'? [-Wimplicit-function-declaration]
+     ret |= LCD_WRITE_DATA(x0 >> 8);
+            ^~~~~~~~~~~~~~
+            LCD_SWRESET
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c: In function 'lcd_st7796_write_ram_data':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c:231:12: warning: implicit declaration of function 'LCD_WRITE'; did you mean 'REG_WRITE'? [-Wimplicit-function-declaration]
+     return LCD_WRITE(data, 2);
+            ^~~~~~~~~
+            REG_WRITE
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7789/st7789.c:329:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c: In function 'lcd_ssd1963_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c:254:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c: In function 'lcd_st7796_draw_bitmap':
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c:254:5: warning: implicit declaration of function 'LCD_IFACE_ACQUIRE' [-Wimplicit-function-declaration]
+     LCD_IFACE_ACQUIRE();
+     ^~~~~~~~~~~~~~~~~
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/ssd1963/ssd1963.c:261:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/core/api/flatbuffer_conversions.cpp.o
+.pio/libdeps/m5stack-core2/TensorFlowLite_ESP32/src/screen/controller_driver/st7796/st7796.c:262:5: warning: implicit declaration of function 'LCD_IFACE_RELEASE'; did you mean 'QMD_TRACE_ELEM'? [-Wimplicit-function-declaration]
+     LCD_IFACE_RELEASE();
+     ^~~~~~~~~~~~~~~~~
+     QMD_TRACE_ELEM
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/core/api/op_resolver.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/core/api/tensor_utils.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/fft.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/fft_util.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/filterbank.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/filterbank_util.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/frontend.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/frontend_util.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/kiss_fft_int16.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/log_lut.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/log_scale.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/log_scale_util.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/noise_reduction.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/noise_reduction_util.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/pcan_gain_control.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/pcan_gain_control_util.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/window.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/experimental/microfrontend/lib/window_util.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/kernels/internal/quantization_util.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/kernels/kernel_util.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/all_ops_resolver.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/arena_allocator/non_persistent_arena_buffer_allocator.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/arena_allocator/recording_simple_memory_allocator.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/arena_allocator/simple_memory_allocator.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/debug_log.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/fake_micro_context.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/flatbuffer_utils.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/activations.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/activations_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/add.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/add_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/add_n.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/arg_min_max.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/assign_variable.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/batch_to_space_nd.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/broadcast_args.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/broadcast_to.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/call_once.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/cast.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/ceil.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/circular_buffer.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/circular_buffer_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/comparisons.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/concatenation.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/conv.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/conv_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/cumsum.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/depth_to_space.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/depthwise_conv.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/depthwise_conv_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/dequantize.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/dequantize_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/detection_postprocess.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/elementwise.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/elu.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/ethosu.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/exp.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/expand_dims.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/fill.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/floor.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/floor_div.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/floor_mod.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/fully_connected.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/fully_connected_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/gather.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/gather_nd.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/hard_swish.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/hard_swish_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/if.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/kernel_runner.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/kernel_util.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/l2_pool_2d.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/l2norm.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/leaky_relu.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/leaky_relu_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/log_softmax.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/logical.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/logical_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/logistic.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/logistic_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/lstm_eval.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/maximum_minimum.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/micro_tensor_utils.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/mirror_pad.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/mul.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/mul_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/neg.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/pack.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/pad.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/pooling.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/pooling_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/prelu.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/prelu_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/quantize.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/quantize_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/read_variable.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/reduce.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/reshape.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/resize_bilinear.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/resize_nearest_neighbor.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/round.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/shape.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/slice.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/softmax.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/softmax_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/space_to_batch_nd.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/space_to_depth.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/split.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/split_v.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/squared_difference.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/squeeze.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/strided_slice.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/sub.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/sub_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/svdf.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/svdf_common.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/tanh.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/transpose.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/transpose_conv.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/unidirectional_sequence_lstm.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/unpack.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/var_handle.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/while.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/kernels/zeros_like.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/memory_helpers.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/memory_planner/greedy_memory_planner.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/memory_planner/linear_memory_planner.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/memory_planner/non_persistent_buffer_planner_shim.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_allocation_info.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_allocator.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_context.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_error_reporter.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_graph.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_interpreter.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_profiler.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_resource_variable.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_string.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_time.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/micro_utils.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/mock_micro_graph.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/recording_micro_allocator.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/system_setup.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/test_helper_custom_ops.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/micro/test_helpers.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/tensorflow/lite/schema/schema_utils.cpp.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/third_party/kissfft/kiss_fft.c.o
+Compiling .pio/build/m5stack-core2/lib4c7/TensorFlowLite_ESP32/third_party/kissfft/tools/kiss_fftr.c.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFi.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiAP.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiClient.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiGeneric.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiMulti.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiSTA.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiScan.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiServer.cpp.o
+Compiling .pio/build/m5stack-core2/libe3d/WiFi/WiFiUdp.cpp.o
+Compiling .pio/build/m5stack-core2/liba6a/WiFiClientSecure/WiFiClientSecure.cpp.o
+Compiling .pio/build/m5stack-core2/liba6a/WiFiClientSecure/esp_crt_bundle.c.o
+Compiling .pio/build/m5stack-core2/liba6a/WiFiClientSecure/ssl_client.cpp.o
+Compiling .pio/build/m5stack-core2/lib8d6/HTTPClient/HTTPClient.cpp.o
+Compiling .pio/build/m5stack-core2/lib8ae/Wire/Wire.cpp.o
+Compiling .pio/build/m5stack-core2/liba80/FS/FS.cpp.o
+Compiling .pio/build/m5stack-core2/liba80/FS/vfs_api.cpp.o
+Compiling .pio/build/m5stack-core2/lib6fb/SPI/SPI.cpp.o
+Compiling .pio/build/m5stack-core2/lib116/SD/SD.cpp.o
+Compiling .pio/build/m5stack-core2/lib116/SD/sd_diskio.cpp.o
+Archiving .pio/build/m5stack-core2/lib8ae/libWire.a
+Archiving .pio/build/m5stack-core2/liba6a/libWiFiClientSecure.a
+Indexing .pio/build/m5stack-core2/lib8ae/libWire.a
+Indexing .pio/build/m5stack-core2/liba6a/libWiFiClientSecure.a
+Archiving .pio/build/m5stack-core2/libe3d/libWiFi.a
+Compiling .pio/build/m5stack-core2/lib116/SD/sd_diskio_crc.c.o
+Indexing .pio/build/m5stack-core2/libe3d/libWiFi.a
+Compiling .pio/build/m5stack-core2/lib60d/SPIFFS/SPIFFS.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/AXP.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/AXP192.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/AXP2101.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/Fonts/Font16.c.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/Fonts/Font32rle.c.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/Fonts/Font64rle.c.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/Fonts/Font72rle.c.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/Fonts/Font7srle.c.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/Fonts/glcdfont.c.o
+Archiving .pio/build/m5stack-core2/lib8d6/libHTTPClient.a
+Archiving .pio/build/m5stack-core2/liba80/libFS.a
+Indexing .pio/build/m5stack-core2/lib8d6/libHTTPClient.a
+Archiving .pio/build/m5stack-core2/lib6fb/libSPI.a
+Indexing .pio/build/m5stack-core2/liba80/libFS.a
+Archiving .pio/build/m5stack-core2/lib4c7/libTensorFlowLite_ESP32.a
+Indexing .pio/build/m5stack-core2/lib6fb/libSPI.a
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/INA3221.cpp.o
+.pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.cpp: In member function 'bool AXP2101::readRegister(uint8_t, uint8_t, uint8_t*, uint16_t, uint32_t)':
+.pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.cpp:190:36: warning: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:
+     _wire->requestFrom(addr, length);
+                                    ^
+In file included from .pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.h:5,
+                 from .pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.cpp:1:
+/home/ai/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h:127:13: note: candidate 1: 'uint8_t TwoWire::requestFrom(int, int)'
+     uint8_t requestFrom(int address, int size);
+             ^~~~~~~~~~~
+/home/ai/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h:125:13: note: candidate 2: 'uint8_t TwoWire::requestFrom(uint8_t, uint8_t)'
+     uint8_t requestFrom(uint8_t address, uint8_t size);
+             ^~~~~~~~~~~
+.pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.cpp: In member function 'uint8_t AXP2101::readRegister8(uint8_t, uint8_t, uint32_t)':
+.pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.cpp:208:31: warning: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:
+     _wire->requestFrom(addr, 1);
+                               ^
+In file included from .pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.h:5,
+                 from .pio/libdeps/m5stack-core2/M5Core2/src/AXP2101.cpp:1:
+/home/ai/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h:127:13: note: candidate 1: 'uint8_t TwoWire::requestFrom(int, int)'
+     uint8_t requestFrom(int address, int size);
+             ^~~~~~~~~~~
+/home/ai/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h:125:13: note: candidate 2: 'uint8_t TwoWire::requestFrom(uint8_t, uint8_t)'
+     uint8_t requestFrom(uint8_t address, uint8_t size);
+             ^~~~~~~~~~~
+Indexing .pio/build/m5stack-core2/lib4c7/libTensorFlowLite_ESP32.a
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/M5Core2.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/M5Display.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/M5Touch.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/RTC.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/Speaker.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/CommUtil.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/In_eSPI.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/M5Button.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/M5Timer.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/MPU6886.cpp.o
+Archiving .pio/build/m5stack-core2/lib60d/libSPIFFS.a
+Archiving .pio/build/m5stack-core2/lib116/libSD.a
+Indexing .pio/build/m5stack-core2/lib60d/libSPIFFS.a
+Indexing .pio/build/m5stack-core2/lib116/libSD.a
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/MahonyAHRS.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/PointAndZone.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/Sprite.cpp.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/pngle.c.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/qrcode.c.o
+Compiling .pio/build/m5stack-core2/lib259/M5Core2/utility/quaternionFilters.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/Esp.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/FirmwareMSC.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/HWCDC.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/IPv6Address.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/MD5Builder.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/USB.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/USBCDC.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/USBMSC.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/base64.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/cbuf.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-bt.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-gpio.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-psram.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-rmt.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/esp32-hal-uart.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/libb64/cencode.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/main.cpp.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/wiring_pulse.c.o
+Compiling .pio/build/m5stack-core2/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/m5stack-core2/libFrameworkArduino.a
+Indexing .pio/build/m5stack-core2/libFrameworkArduino.a
+Archiving .pio/build/m5stack-core2/lib259/libM5Core2.a
+Indexing .pio/build/m5stack-core2/lib259/libM5Core2.a
+Linking .pio/build/m5stack-core2/firmware.elf
+/home/ai/.platformio/packages/toolchain-xtensa-esp32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/ld: .pio/build/m5stack-core2/src/model_bak_20231229.cc.o:/home/ai/RLRepo/Works/Projects/TransferLearning_for_ACDNet/mcu_codes/ACDNET_MSCore2/src/model_bak_20231229.cc:13033: multiple definition of `g_feature_size'; .pio/build/m5stack-core2/src/model.cc.o:/home/ai/RLRepo/Works/Projects/TransferLearning_for_ACDNet/mcu_codes/ACDNET_MSCore2/src/model.cc:2352: first defined here
+/home/ai/.platformio/packages/toolchain-xtensa-esp32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/ld: .pio/build/m5stack-core2/src/model_bak_20231229.cc.o:/home/ai/RLRepo/Works/Projects/TransferLearning_for_ACDNet/mcu_codes/ACDNET_MSCore2/src/model_bak_20231229.cc:13032: multiple definition of `g_arena_size'; .pio/build/m5stack-core2/src/model.cc.o:/home/ai/RLRepo/Works/Projects/TransferLearning_for_ACDNet/mcu_codes/ACDNET_MSCore2/src/model.cc:2351: first defined here

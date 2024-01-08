@@ -2346,7 +2346,7 @@ const unsigned char acdnet_model[] DATA_ALIGN_ATTRIBUTE= {
   0x5f, 0x74, 0x65, 0x5f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72,
   0x6d, 0x00, 0x00, 0x00
 };
-unsigned int acdnet_model_len = 28120;
+const unsigned int acdnet_model_len = 28120;
 const char acdnet_model_name[] = "acdnet_95.tflite";
 const unsigned int g_arena_size = 302900;
 const unsigned int g_feature_size = 30225;
