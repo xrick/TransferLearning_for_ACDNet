@@ -1,0 +1,9 @@
+Installing collected packages: numpy, wavio
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.18.5
+    Uninstalling numpy-1.18.5:
+      Successfully uninstalled numpy-1.18.5
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+tensorflow 2.3.1 requires numpy<1.19.0,>=1.16.0, but you have numpy 1.24.4 which is incompatible.
+Successfully installed numpy-1.24.4 wavio-0.0.8
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
