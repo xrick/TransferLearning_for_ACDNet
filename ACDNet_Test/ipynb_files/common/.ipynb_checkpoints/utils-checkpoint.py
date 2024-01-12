@@ -99,14 +99,37 @@ def random_gain(db):
 
 
 # For testing phase
+# original codes of multi_crop
 def multi_crop(input_length, n_crops):
     def f(sound):
         stride = (len(sound) - input_length) // (n_crops - 1)
         sounds = [sound[stride * i: stride * i + input_length] for i in range(n_crops)]
         return np.array(sounds)
-
     return f
 
+# def multi_crop(input_length, n_crops):
+#     def f(sound):
+#         stride = (len(sound) - input_length) // (n_crops - 1)
+#         print(f"strind = {stride}")
+#         for i in range(n_crops):
+#             clip_start = stride * i;
+#             clip_end = stride * i + input_length;
+#             print(f"clip-{i+1} range: {clip_start} to {clip_end}");
+#         sounds = [sound[stride * i: stride * i + input_length] for i in range(n_crops)]
+#         # print(f"sounds:{sounds}")
+#         return np.array(sounds)
+#     return f
+
+
+
+#modify for only-one crop
+def single_crop(input_length):
+    def f(sound):
+        stride = (len(sound) - input_length)
+        sounds = [sound[stride + input_length]];
+        # sounds = [sound[stride * i: stride * i + input_length] for i in range(n_crops)]
+        return np.array(sounds)
+    return f
 
 # For BC learning
 def a_weight(fs, n_fft, min_db=-80.0):
