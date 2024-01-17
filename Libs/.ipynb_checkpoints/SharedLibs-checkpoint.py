@@ -1,4 +1,5 @@
 import re
+import os
 
 def getFileList(srcDir,regex='.*\.wav'):
     # example: regex = '.*\.mp3'
@@ -17,3 +18,9 @@ def getFileList(srcDir,regex='.*\.wav'):
 def Convert(src_wav, dest_wav, sr):
     subprocess.call('ffmpeg -i {} -ac 1 -ar {} -loglevel error -y {}'.format(
             src_wav, sr, dest_wav), shell=True);
+
+def getFolderList(rootDir=None, recursive=False):
+    if not recursive:
+        return next(os.walk(rootDir));
+    else:
+        return [x[0] for x in os.walk(rootDir)]
