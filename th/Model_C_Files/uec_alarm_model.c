@@ -12433,6 +12433,6 @@ unsigned char uec_alarm_model[] = {
 //const unsigned int uec_iot_model_alarm_len = 138456;
 const unsigned int uec_alarm_model_len = 149160;
 const char uec_alarm_tflite_name[] = "acdnet_ori_97.7_to_quant_86.3_202401221042.tflite";
-const unsigned int g_arena_size = 149160; //need to calculate
+const unsigned int g_arena_size = 318169; //need to calculate
 const unsigned int g_feature_size = 30225;
 
