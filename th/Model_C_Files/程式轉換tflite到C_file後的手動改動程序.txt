@@ -1,0 +1,46 @@
+程式轉換tflite到C_file後的手動改動程序
+
+1. 改變權重陣列的名稱，例如：
+	xxx-tflite[] --> uec_model[]
+
+2. 在.c file最後加入其它變數，例如：
+    const unsigned int uec_alarm_model_len = 149160;
+	const char uec_alarm_tflite_name[] = "acdnet_ori_97.7_to_quant_86.3_202401221042.tflite";
+	const unsigned int g_arena_size = 149160; //need to calculate
+	const unsigned int g_feature_size = 30225;
+	其中g_arena_size的值要用tflm來計算。
+
+3. 新增.h header file，例：
+---------------------------------------------------------------------------------
+#ifndef _MODEL_H
+#define _MODEL_H
+
+// We need to keep the data array aligned on some architectures.
+#ifdef __has_attribute
+#define HAVE_ATTRIBUTE(x) __has_attribute(x)
+#else
+#define HAVE_ATTRIBUTE(x) 0
+#endif
+#if HAVE_ATTRIBUTE(aligned) || (defined(__GNUC__) && !defined(__clang__))
+#define DATA_ALIGN_ATTRIBUTE __attribute__((aligned(4)))
+#else
+#define DATA_ALIGN_ATTRIBUTE
+#endif
+
+extern const unsigned char uec_alarm_model[];
+extern const unsigned int uec_alarm_model_len;
+extern const char uec_alarm_tflite_name[];
+extern const unsigned int g_arena_size;
+extern const unsigned int g_feature_size;
+
+#ifndef FEATURE_PATH
+#define FEATURE_PATH "/mnt/sd0/data"
+#endif
+
+#ifndef FEATURE_WIDTH
+#define FEATURE_WIDTH 30225
+#endif
+
+#endif  // _MODEL_H
+
+-----------------------------------------------------------------------------------

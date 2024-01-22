@@ -1,0 +1,13 @@
+acdnet for demostic alarm 
+
+current best accuracy:97.7
+settings:
+final acc:97.72
+at epochs:190
+opt.batchSize = 32;
+opt.LR = 0.1;
+opt.weightDecay = 5e-3;
+opt.momentum = 0.09;
+opt.nEpochs = 1000;
+opt.schedule = [0.3, 0.6, 0.9];
+opt.warmup = 10;

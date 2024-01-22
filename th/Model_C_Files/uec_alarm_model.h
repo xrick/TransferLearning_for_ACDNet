@@ -13,9 +13,9 @@
 #define DATA_ALIGN_ATTRIBUTE
 #endif
 
-extern const unsigned char acdnet_model[];
-extern const unsigned int acdnet_model_len;
-extern const char acdnet_model_name[];
+extern const unsigned char uec_alarm_model[];
+extern const unsigned int uec_alarm_model_len;
+extern const char uec_alarm_tflite_name[];
 extern const unsigned int g_arena_size;
 extern const unsigned int g_feature_size;
 
