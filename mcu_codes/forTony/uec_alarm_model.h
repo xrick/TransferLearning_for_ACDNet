@@ -15,9 +15,9 @@
 
 extern const unsigned char uec_alarm_model[];
 extern const unsigned int uec_alarm_model_len;
-// extern const char uec_alarm_tflite_name[];
+extern const char uec_alarm_tflite_name[];
 extern const unsigned int g_arena_size;
-// extern const unsigned int g_feature_size;
+extern const unsigned int g_feature_size;
 
 #ifndef FEATURE_PATH
 #define FEATURE_PATH "/mnt/sd0/data"

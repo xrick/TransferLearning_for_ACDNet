@@ -1,6 +1,4 @@
-#include"uec_alarm_model.h"
-
-unsigned char uec_alarm_model[] DATA_ALIGN_ATTRIBUTE= {
+unsigned char uec_alarm_model[] = {
   0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
   0x18, 0x00, 0x0c, 0x00, 0x08, 0x00, 0x04, 0x00, 0x10, 0x00, 0x14, 0x00,
   0x0e, 0x00, 0x00, 0x00, 0x38, 0x00, 0x00, 0x00, 0x3c, 0x00, 0x00, 0x00,
@@ -12434,7 +12432,7 @@ unsigned char uec_alarm_model[] DATA_ALIGN_ATTRIBUTE= {
 };
 //const unsigned int uec_iot_model_alarm_len = 138456;
 const unsigned int uec_alarm_model_len = 149160;
-// const char uec_alarm_tflite_name[] = "acdnet_ori_97.7_to_quant_86.3_202401221042.tflite";
+const char uec_alarm_tflite_name[] = "acdnet_ori_97.7_to_quant_86.3_202401221042.tflite";
 const unsigned int g_arena_size = 318169; //need to calculate
-// const unsigned int g_feature_size = 30225;
+const unsigned int g_feature_size = 30225;
 

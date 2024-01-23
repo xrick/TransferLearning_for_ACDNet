@@ -22,8 +22,6 @@ namespace{
   int32_t _input_number = 0;
   constexpr int kTensorArenaSize = 10 * 1024;
   uint8_t tensor_arena[kTensorArenaSize];
-  NeuralNetworkFeatureProvider* featureProvider = nullptr;
-  NeuralNetworkScores* scores = nullptr;
   
 }
 //function declartion
