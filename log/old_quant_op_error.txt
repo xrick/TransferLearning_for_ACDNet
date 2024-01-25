@@ -1,0 +1,3 @@
+Didn't find op for builtin opcode 'QUANTIZE' version '1'. An older version of this builtin might be supported. Are you using an old TFLite binary with a newer model?
+
+Failed to get registration from op code QUANTIZE

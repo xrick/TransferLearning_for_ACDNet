@@ -1,8 +1,6 @@
 ////tensorflow libraries include
 #include "tensorflow/lite/micro/kernels/micro_ops.h"
-//Rick modify:24/01/25
-// #include "tensorflow/lite/micro/micro_error_reporter.h"
-#include "tensorflow/lite/micro/tflite_bridge/micro_error_reporter.h"
+#include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/schema/schema_generated.h"
@@ -21,7 +19,7 @@ TfLiteTensor* output = nullptr;
 int inference_count;
 uint32_t inference_time;
 int32_t _input_number = 0;
-constexpr int kTensorArenaSize = 318169;
+constexpr int kTensorArenaSize = 3182169;
 uint8_t tensor_arena[kTensorArenaSize];
 // NeuralNetworkFeatureProvider* featureProvider = nullptr;
 // NeuralNetworkScores* scores = nullptr;
@@ -48,42 +46,24 @@ void soundsetup(){
         }
     }
 
-    //Rick modify: add the following 24/01/25
-    // {//construct NN structures
-    //     static tflite::MicroMutableOpResolver<8> static_resolver;
-    //     static_resolver.AddConv2D();    
-    //     static_resolver.AddDepthwiseConv2D();
-    //     static_resolver.AddFullyConnected();
-    //     static_resolver.AddReshape();
-    //     static_resolver.AddSoftmax();
-    //     static_resolver.AddAveragePool2D();
-    //     static_resolver.AddMaxPool2D();
-    //     static_resolver.AddTranspose();
-    //     resolver = &static_resolver;
-    //     printf("Network build done and Resolver done\n");
-    // }
-    {
-        static tflite::MicroMutableOpResolver<9> static_resolver;
-        static_resolver.AddQuantize();//new add, and need to test where to put it
-        static_resolver.AddConv2D(tflite::Register_CONV_2D_INT16());    
-        static_resolver.AddDepthwiseConv2D(tflite::Register_DEPTHWISE_CONV_2D_INT8());
-        static_resolver.AddFullyConnected(tflite::Register_FULLY_CONNECTED_INT8());
+    {//construct NN structures
+        static tflite::MicroMutableOpResolver<8> static_resolver;
+        static_resolver.AddConv2D();    
+        static_resolver.AddDepthwiseConv2D();
+        static_resolver.AddFullyConnected();
         static_resolver.AddReshape();
-        static_resolver.AddSoftmax(tflite::Register_SOFTMAX_INT8_INT16());
-        static_resolver.AddAveragePool2D(tflite::Register_AVERAGE_POOL_2D_INT16());
-        static_resolver.AddMaxPool2D(tflite::Register_MAX_POOL_2D_INT8());
+        static_resolver.AddSoftmax();
+        static_resolver.AddAveragePool2D();
+        static_resolver.AddMaxPool2D();
         static_resolver.AddTranspose();
         resolver = &static_resolver;
-        Serial.println("Network build done and Resolver done\n");
+        printf("Network build done and Resolver done\n");
     }
 
     {//initializing model interpreter
         
-        //Rick modify: no need error_reporter
-        // static tflite::MicroInterpreter static_interpreter(
-        // model, *resolver, tensor_arena, kTensorArenaSize, error_reporter);
         static tflite::MicroInterpreter static_interpreter(
-        model, *resolver, tensor_arena, kTensorArenaSize);
+        model, *resolver, tensor_arena, kTensorArenaSize, error_reporter);
 
         interpreter = &static_interpreter;
         printf("Interpreter done\n");    
