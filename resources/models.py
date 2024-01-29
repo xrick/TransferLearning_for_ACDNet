@@ -97,7 +97,7 @@ class ConvBlock:
         layer = L.ReLU()(layer);
         return layer;
 
-def GetAcdnetModel(input_length=66650, n_class=50, sr=44100, ch_config=None):
+def GetAcdnetModel(input_length=30225, n_class=2, sr=20000, ch_config=None):
     acdnet = ACDNet(input_length, n_class, sr, ch_config);
     return acdnet.createModel();
 

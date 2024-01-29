@@ -1,0 +1,5 @@
+Network build done and Resolver done
+Interpreter done
+../../../tflite-micro-esp32/tensorflow/lite/micro/kernels/conv_common.cc Hybrid models are not supported on TFLite Micro.
+Node CONV_2D (number 1f) failed to prepare with status 1
+AllocateTensors() failed
