@@ -36,7 +36,7 @@ def random_scale(max_scale, interpolate='Linear'):
         if interpolate == 'Linear':
             ref1 = ref.astype(np.int32)
             ref2 = np.minimum(ref1 + 1, len(sound) - 1)
-            print(f"ref1:{ref1}, type:{type(ref1)},  ref2:{ref2}, type:{type(ref2)}")
+            # print(f"ref1:{ref1}, type:{type(ref1)},  ref2:{ref2}, type:{type(ref2)}")
             r = ref - ref1
             scaled_sound = sound[ref1] * (1 - r) + sound[ref2] * r
         elif interpolate == 'Nearest':
