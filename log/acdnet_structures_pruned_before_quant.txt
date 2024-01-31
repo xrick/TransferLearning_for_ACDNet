@@ -1,0 +1,204 @@
+INFO:pytorch2keras:Converter is called.
+WARNING:pytorch2keras:Name policy isn't supported now.
+WARNING:pytorch2keras:Custom shapes isn't supported now.
+DEBUG:pytorch2keras:Input_names:
+DEBUG:pytorch2keras:['input_0']
+DEBUG:pytorch2keras:Output_names:
+DEBUG:pytorch2keras:['output_0']
+INFO:onnx2keras:Converter is called.
+DEBUG:onnx2keras:List input shapes:
+DEBUG:onnx2keras:[(1, 1, 30225)]
+DEBUG:onnx2keras:List inputs:
+DEBUG:onnx2keras:Input 0 -> input_0.
+DEBUG:onnx2keras:List outputs:
+DEBUG:onnx2keras:Output 0 -> output_0.
+DEBUG:onnx2keras:Gathering weights to dictionary.
+DEBUG:onnx2keras:Found weight sfeb.0.weight with shape (5, 1, 1, 9).
+DEBUG:onnx2keras:Found weight sfeb.1.weight with shape (5,).
+DEBUG:onnx2keras:Found weight sfeb.1.bias with shape (5,).
+DEBUG:onnx2keras:Found weight sfeb.1.running_mean with shape (5,).
+DEBUG:onnx2keras:Found weight sfeb.1.running_var with shape (5,).
+DEBUG:onnx2keras:Found weight sfeb.3.weight with shape (32, 5, 1, 5).
+DEBUG:onnx2keras:Found weight sfeb.4.weight with shape (32,).
+DEBUG:onnx2keras:Found weight sfeb.4.bias with shape (32,).
+DEBUG:onnx2keras:Found weight sfeb.4.running_mean with shape (32,).
+DEBUG:onnx2keras:Found weight sfeb.4.running_var with shape (32,).
+DEBUG:onnx2keras:Found weight tfeb.0.weight with shape (9, 1, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.1.weight with shape (9,).
+DEBUG:onnx2keras:Found weight tfeb.1.bias with shape (9,).
+DEBUG:onnx2keras:Found weight tfeb.1.running_mean with shape (9,).
+DEBUG:onnx2keras:Found weight tfeb.1.running_var with shape (9,).
+DEBUG:onnx2keras:Found weight tfeb.4.weight with shape (16, 9, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.5.weight with shape (16,).
+DEBUG:onnx2keras:Found weight tfeb.5.bias with shape (16,).
+DEBUG:onnx2keras:Found weight tfeb.5.running_mean with shape (16,).
+DEBUG:onnx2keras:Found weight tfeb.5.running_var with shape (16,).
+DEBUG:onnx2keras:Found weight tfeb.7.weight with shape (23, 16, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.8.weight with shape (23,).
+DEBUG:onnx2keras:Found weight tfeb.8.bias with shape (23,).
+DEBUG:onnx2keras:Found weight tfeb.8.running_mean with shape (23,).
+DEBUG:onnx2keras:Found weight tfeb.8.running_var with shape (23,).
+DEBUG:onnx2keras:Found weight tfeb.11.weight with shape (33, 23, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.12.weight with shape (33,).
+DEBUG:onnx2keras:Found weight tfeb.12.bias with shape (33,).
+DEBUG:onnx2keras:Found weight tfeb.12.running_mean with shape (33,).
+DEBUG:onnx2keras:Found weight tfeb.12.running_var with shape (33,).
+DEBUG:onnx2keras:Found weight tfeb.14.weight with shape (29, 33, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.15.weight with shape (29,).
+DEBUG:onnx2keras:Found weight tfeb.15.bias with shape (29,).
+DEBUG:onnx2keras:Found weight tfeb.15.running_mean with shape (29,).
+DEBUG:onnx2keras:Found weight tfeb.15.running_var with shape (29,).
+DEBUG:onnx2keras:Found weight tfeb.18.weight with shape (56, 29, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.19.weight with shape (56,).
+DEBUG:onnx2keras:Found weight tfeb.19.bias with shape (56,).
+DEBUG:onnx2keras:Found weight tfeb.19.running_mean with shape (56,).
+DEBUG:onnx2keras:Found weight tfeb.19.running_var with shape (56,).
+DEBUG:onnx2keras:Found weight tfeb.21.weight with shape (47, 56, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.22.weight with shape (47,).
+DEBUG:onnx2keras:Found weight tfeb.22.bias with shape (47,).
+DEBUG:onnx2keras:Found weight tfeb.22.running_mean with shape (47,).
+DEBUG:onnx2keras:Found weight tfeb.22.running_var with shape (47,).
+DEBUG:onnx2keras:Found weight tfeb.25.weight with shape (65, 47, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.26.weight with shape (65,).
+DEBUG:onnx2keras:Found weight tfeb.26.bias with shape (65,).
+DEBUG:onnx2keras:Found weight tfeb.26.running_mean with shape (65,).
+DEBUG:onnx2keras:Found weight tfeb.26.running_var with shape (65,).
+DEBUG:onnx2keras:Found weight tfeb.28.weight with shape (90, 65, 3, 3).
+DEBUG:onnx2keras:Found weight tfeb.29.weight with shape (90,).
+DEBUG:onnx2keras:Found weight tfeb.29.bias with shape (90,).
+DEBUG:onnx2keras:Found weight tfeb.29.running_mean with shape (90,).
+DEBUG:onnx2keras:Found weight tfeb.29.running_var with shape (90,).
+DEBUG:onnx2keras:Found weight tfeb.33.weight with shape (2, 90, 1, 1).
+DEBUG:onnx2keras:Found weight tfeb.34.weight with shape (2,).
+DEBUG:onnx2keras:Found weight tfeb.34.bias with shape (2,).
+DEBUG:onnx2keras:Found weight tfeb.34.running_mean with shape (2,).
+DEBUG:onnx2keras:Found weight tfeb.34.running_var with shape (2,).
+DEBUG:onnx2keras:Found weight tfeb.38.weight with shape (2, 2).
+DEBUG:onnx2keras:Found weight tfeb.38.bias with shape (2,).
+DEBUG:onnx2keras:Found input input_0 with shape (1, 1, 30225)
+DEBUG:onnx2keras:######
+DEBUG:onnx2keras:...
+DEBUG:onnx2keras:Converting ONNX operation
+DEBUG:onnx2keras:type: Conv
+DEBUG:onnx2keras:node_name: /sfeb/sfeb.0/Conv_output_0
+DEBUG:onnx2keras:node_params: {'dilations': [1, 1], 'group': 1, 'kernel_shape': [1, 9], 'pads': [0, 0, 0, 0], 'strides': [1, 2], 'change_ordering': False, 'name_policy': 'short'}
+DEBUG:onnx2keras:...
+DEBUG:onnx2keras:Check if all inputs are available:
+DEBUG:onnx2keras:Check input 0 (name input_0).
+DEBUG:onnx2keras:Check input 1 (name sfeb.0.weight).
+DEBUG:onnx2keras:The input not found in layers / model inputs.
+DEBUG:onnx2keras:Found in weights, add as a numpy constant.
+DEBUG:onnx2keras:... found all, continue
+DEBUG:onnx2keras:conv:Conv without bias
+DEBUG:onnx2keras:conv:2D convolution
+Exported graph: graph(%input_0 : Float(1, 1, 1, 30225, strides=[30225, 30225, 30225, 1], requires_grad=0, device=cpu),
+      %sfeb.0.weight : Float(5, 1, 1, 9, strides=[9, 9, 9, 1], requires_grad=1, device=cpu),
+      %sfeb.1.weight : Float(5, strides=[1], requires_grad=1, device=cpu),
+      %sfeb.1.bias : Float(5, strides=[1], requires_grad=1, device=cpu),
+      %sfeb.1.running_mean : Float(5, strides=[1], requires_grad=0, device=cpu),
+      %sfeb.1.running_var : Float(5, strides=[1], requires_grad=0, device=cpu),
+      %sfeb.3.weight : Float(32, 5, 1, 5, strides=[25, 5, 5, 1], requires_grad=1, device=cpu),
+      %sfeb.4.weight : Float(32, strides=[1], requires_grad=1, device=cpu),
+      %sfeb.4.bias : Float(32, strides=[1], requires_grad=1, device=cpu),
+      %sfeb.4.running_mean : Float(32, strides=[1], requires_grad=0, device=cpu),
+      %sfeb.4.running_var : Float(32, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.0.weight : Float(9, 1, 3, 3, strides=[9, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.1.weight : Float(9, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.1.bias : Float(9, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.1.running_mean : Float(9, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.1.running_var : Float(9, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.4.weight : Float(16, 9, 3, 3, strides=[81, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.5.weight : Float(16, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.5.bias : Float(16, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.5.running_mean : Float(16, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.5.running_var : Float(16, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.7.weight : Float(23, 16, 3, 3, strides=[144, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.8.weight : Float(23, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.8.bias : Float(23, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.8.running_mean : Float(23, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.8.running_var : Float(23, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.11.weight : Float(33, 23, 3, 3, strides=[207, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.12.weight : Float(33, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.12.bias : Float(33, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.12.running_mean : Float(33, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.12.running_var : Float(33, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.14.weight : Float(29, 33, 3, 3, strides=[297, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.15.weight : Float(29, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.15.bias : Float(29, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.15.running_mean : Float(29, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.15.running_var : Float(29, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.18.weight : Float(56, 29, 3, 3, strides=[261, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.19.weight : Float(56, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.19.bias : Float(56, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.19.running_mean : Float(56, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.19.running_var : Float(56, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.21.weight : Float(47, 56, 3, 3, strides=[504, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.22.weight : Float(47, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.22.bias : Float(47, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.22.running_mean : Float(47, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.22.running_var : Float(47, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.25.weight : Float(65, 47, 3, 3, strides=[423, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.26.weight : Float(65, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.26.bias : Float(65, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.26.running_mean : Float(65, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.26.running_var : Float(65, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.28.weight : Float(90, 65, 3, 3, strides=[585, 9, 3, 1], requires_grad=1, device=cpu),
+      %tfeb.29.weight : Float(90, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.29.bias : Float(90, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.29.running_mean : Float(90, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.29.running_var : Float(90, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.33.weight : Float(2, 90, 1, 1, strides=[90, 1, 1, 1], requires_grad=1, device=cpu),
+      %tfeb.34.weight : Float(2, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.34.bias : Float(2, strides=[1], requires_grad=1, device=cpu),
+      %tfeb.34.running_mean : Float(2, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.34.running_var : Float(2, strides=[1], requires_grad=0, device=cpu),
+      %tfeb.38.weight : Float(2, 2, strides=[2, 1], requires_grad=1, device=cpu),
+      %tfeb.38.bias : Float(2, strides=[1], requires_grad=1, device=cpu)):
+  %/sfeb/sfeb.0/Conv_output_0 : Float(1, 5, 1, 15109, strides=[75545, 15109, 15109, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[1, 9], pads=[0, 0, 0, 0], strides=[1, 2], onnx_name="/sfeb/sfeb.0/Conv"](%input_0, %sfeb.0.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::sfeb/torch.nn.modules.conv.Conv2d::sfeb.0 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/sfeb/sfeb.1/BatchNormalization_output_0 : Float(1, 5, 1, 15109, strides=[75545, 15109, 15109, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/sfeb/sfeb.1/BatchNormalization"](%/sfeb/sfeb.0/Conv_output_0, %sfeb.1.weight, %sfeb.1.bias, %sfeb.1.running_mean, %sfeb.1.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::sfeb/torch.nn.modules.batchnorm.BatchNorm2d::sfeb.1 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/sfeb/sfeb.2/Relu_output_0 : Float(1, 5, 1, 15109, strides=[75545, 15109, 15109, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/sfeb/sfeb.2/Relu"](%/sfeb/sfeb.1/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::sfeb/torch.nn.modules.activation.ReLU::sfeb.2 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/sfeb/sfeb.3/Conv_output_0 : Float(1, 32, 1, 7553, strides=[241696, 7553, 7553, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[1, 5], pads=[0, 0, 0, 0], strides=[1, 2], onnx_name="/sfeb/sfeb.3/Conv"](%/sfeb/sfeb.2/Relu_output_0, %sfeb.3.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::sfeb/torch.nn.modules.conv.Conv2d::sfeb.3 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/sfeb/sfeb.4/BatchNormalization_output_0 : Float(1, 32, 1, 7553, strides=[241696, 7553, 7553, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/sfeb/sfeb.4/BatchNormalization"](%/sfeb/sfeb.3/Conv_output_0, %sfeb.4.weight, %sfeb.4.bias, %sfeb.4.running_mean, %sfeb.4.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::sfeb/torch.nn.modules.batchnorm.BatchNorm2d::sfeb.4 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/sfeb/sfeb.5/Relu_output_0 : Float(1, 32, 1, 7553, strides=[241696, 7553, 7553, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/sfeb/sfeb.5/Relu"](%/sfeb/sfeb.4/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::sfeb/torch.nn.modules.activation.ReLU::sfeb.5 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/sfeb/sfeb.6/MaxPool_output_0 : Float(1, 32, 1, 151, strides=[4832, 151, 151, 1], requires_grad=1, device=cpu) = onnx::MaxPool[ceil_mode=0, dilations=[1, 1], kernel_shape=[1, 50], pads=[0, 0, 0, 0], strides=[1, 50], onnx_name="/sfeb/sfeb.6/MaxPool"](%/sfeb/sfeb.5/Relu_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::sfeb/torch.nn.modules.pooling.MaxPool2d::sfeb.6 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:796:0
+  %/Transpose_output_0 : Float(1, 1, 32, 151, strides=[4832, 151, 151, 1], requires_grad=1, device=cpu) = onnx::Transpose[perm=[0, 2, 1, 3], onnx_name="/Transpose"](%/sfeb/sfeb.6/MaxPool_output_0), scope: th.resources.models.ACDNetV2:: # /home/ai/RLRepo/Works/Projects/TransferLearning_for_ACDNet/refine_codes/tools_for_model_conversion/../../th/resources/models.py:88:0
+  %/tfeb/tfeb.0/Conv_output_0 : Float(1, 9, 32, 151, strides=[43488, 4832, 151, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.0/Conv"](%/Transpose_output_0, %tfeb.0.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.0 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.1/BatchNormalization_output_0 : Float(1, 9, 32, 151, strides=[43488, 4832, 151, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.1/BatchNormalization"](%/tfeb/tfeb.0/Conv_output_0, %tfeb.1.weight, %tfeb.1.bias, %tfeb.1.running_mean, %tfeb.1.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.1 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.2/Relu_output_0 : Float(1, 9, 32, 151, strides=[43488, 4832, 151, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.2/Relu"](%/tfeb/tfeb.1/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.2 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.3/MaxPool_output_0 : Float(1, 9, 16, 75, strides=[10800, 1200, 75, 1], requires_grad=1, device=cpu) = onnx::MaxPool[ceil_mode=0, dilations=[1, 1], kernel_shape=[2, 2], pads=[0, 0, 0, 0], strides=[2, 2], onnx_name="/tfeb/tfeb.3/MaxPool"](%/tfeb/tfeb.2/Relu_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.pooling.MaxPool2d::tfeb.3 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:796:0
+  %/tfeb/tfeb.4/Conv_output_0 : Float(1, 16, 16, 75, strides=[19200, 1200, 75, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.4/Conv"](%/tfeb/tfeb.3/MaxPool_output_0, %tfeb.4.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.4 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.5/BatchNormalization_output_0 : Float(1, 16, 16, 75, strides=[19200, 1200, 75, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.5/BatchNormalization"](%/tfeb/tfeb.4/Conv_output_0, %tfeb.5.weight, %tfeb.5.bias, %tfeb.5.running_mean, %tfeb.5.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.5 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.6/Relu_output_0 : Float(1, 16, 16, 75, strides=[19200, 1200, 75, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.6/Relu"](%/tfeb/tfeb.5/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.6 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.7/Conv_output_0 : Float(1, 23, 16, 75, strides=[27600, 1200, 75, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.7/Conv"](%/tfeb/tfeb.6/Relu_output_0, %tfeb.7.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.7 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.8/BatchNormalization_output_0 : Float(1, 23, 16, 75, strides=[27600, 1200, 75, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.8/BatchNormalization"](%/tfeb/tfeb.7/Conv_output_0, %tfeb.8.weight, %tfeb.8.bias, %tfeb.8.running_mean, %tfeb.8.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.8 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.9/Relu_output_0 : Float(1, 23, 16, 75, strides=[27600, 1200, 75, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.9/Relu"](%/tfeb/tfeb.8/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.9 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.10/MaxPool_output_0 : Float(1, 23, 8, 37, strides=[6808, 296, 37, 1], requires_grad=1, device=cpu) = onnx::MaxPool[ceil_mode=0, dilations=[1, 1], kernel_shape=[2, 2], pads=[0, 0, 0, 0], strides=[2, 2], onnx_name="/tfeb/tfeb.10/MaxPool"](%/tfeb/tfeb.9/Relu_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.pooling.MaxPool2d::tfeb.10 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:796:0
+  %/tfeb/tfeb.11/Conv_output_0 : Float(1, 33, 8, 37, strides=[9768, 296, 37, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.11/Conv"](%/tfeb/tfeb.10/MaxPool_output_0, %tfeb.11.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.11 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.12/BatchNormalization_output_0 : Float(1, 33, 8, 37, strides=[9768, 296, 37, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.12/BatchNormalization"](%/tfeb/tfeb.11/Conv_output_0, %tfeb.12.weight, %tfeb.12.bias, %tfeb.12.running_mean, %tfeb.12.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.12 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.13/Relu_output_0 : Float(1, 33, 8, 37, strides=[9768, 296, 37, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.13/Relu"](%/tfeb/tfeb.12/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.13 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.14/Conv_output_0 : Float(1, 29, 8, 37, strides=[8584, 296, 37, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.14/Conv"](%/tfeb/tfeb.13/Relu_output_0, %tfeb.14.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.14 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.15/BatchNormalization_output_0 : Float(1, 29, 8, 37, strides=[8584, 296, 37, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.15/BatchNormalization"](%/tfeb/tfeb.14/Conv_output_0, %tfeb.15.weight, %tfeb.15.bias, %tfeb.15.running_mean, %tfeb.15.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.15 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.16/Relu_output_0 : Float(1, 29, 8, 37, strides=[8584, 296, 37, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.16/Relu"](%/tfeb/tfeb.15/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.16 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.17/MaxPool_output_0 : Float(1, 29, 4, 18, strides=[2088, 72, 18, 1], requires_grad=1, device=cpu) = onnx::MaxPool[ceil_mode=0, dilations=[1, 1], kernel_shape=[2, 2], pads=[0, 0, 0, 0], strides=[2, 2], onnx_name="/tfeb/tfeb.17/MaxPool"](%/tfeb/tfeb.16/Relu_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.pooling.MaxPool2d::tfeb.17 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:796:0
+  %/tfeb/tfeb.18/Conv_output_0 : Float(1, 56, 4, 18, strides=[4032, 72, 18, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.18/Conv"](%/tfeb/tfeb.17/MaxPool_output_0, %tfeb.18.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.18 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.19/BatchNormalization_output_0 : Float(1, 56, 4, 18, strides=[4032, 72, 18, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.19/BatchNormalization"](%/tfeb/tfeb.18/Conv_output_0, %tfeb.19.weight, %tfeb.19.bias, %tfeb.19.running_mean, %tfeb.19.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.19 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.20/Relu_output_0 : Float(1, 56, 4, 18, strides=[4032, 72, 18, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.20/Relu"](%/tfeb/tfeb.19/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.20 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.21/Conv_output_0 : Float(1, 47, 4, 18, strides=[3384, 72, 18, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.21/Conv"](%/tfeb/tfeb.20/Relu_output_0, %tfeb.21.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.21 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.22/BatchNormalization_output_0 : Float(1, 47, 4, 18, strides=[3384, 72, 18, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.22/BatchNormalization"](%/tfeb/tfeb.21/Conv_output_0, %tfeb.22.weight, %tfeb.22.bias, %tfeb.22.running_mean, %tfeb.22.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.22 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.23/Relu_output_0 : Float(1, 47, 4, 18, strides=[3384, 72, 18, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.23/Relu"](%/tfeb/tfeb.22/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.23 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.24/MaxPool_output_0 : Float(1, 47, 2, 9, strides=[846, 18, 9, 1], requires_grad=1, device=cpu) = onnx::MaxPool[ceil_mode=0, dilations=[1, 1], kernel_shape=[2, 2], pads=[0, 0, 0, 0], strides=[2, 2], onnx_name="/tfeb/tfeb.24/MaxPool"](%/tfeb/tfeb.23/Relu_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.pooling.MaxPool2d::tfeb.24 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:796:0
+  %/tfeb/tfeb.25/Conv_output_0 : Float(1, 65, 2, 9, strides=[1170, 18, 9, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.25/Conv"](%/tfeb/tfeb.24/MaxPool_output_0, %tfeb.25.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.25 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.26/BatchNormalization_output_0 : Float(1, 65, 2, 9, strides=[1170, 18, 9, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.26/BatchNormalization"](%/tfeb/tfeb.25/Conv_output_0, %tfeb.26.weight, %tfeb.26.bias, %tfeb.26.running_mean, %tfeb.26.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.26 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.27/Relu_output_0 : Float(1, 65, 2, 9, strides=[1170, 18, 9, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.27/Relu"](%/tfeb/tfeb.26/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.27 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.28/Conv_output_0 : Float(1, 90, 2, 9, strides=[1620, 18, 9, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[3, 3], pads=[1, 1, 1, 1], strides=[1, 1], onnx_name="/tfeb/tfeb.28/Conv"](%/tfeb/tfeb.27/Relu_output_0, %tfeb.28.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.28 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.29/BatchNormalization_output_0 : Float(1, 90, 2, 9, strides=[1620, 18, 9, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.29/BatchNormalization"](%/tfeb/tfeb.28/Conv_output_0, %tfeb.29.weight, %tfeb.29.bias, %tfeb.29.running_mean, %tfeb.29.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.29 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.30/Relu_output_0 : Float(1, 90, 2, 9, strides=[1620, 18, 9, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.30/Relu"](%/tfeb/tfeb.29/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.30 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.31/MaxPool_output_0 : Float(1, 90, 1, 4, strides=[360, 4, 4, 1], requires_grad=1, device=cpu) = onnx::MaxPool[ceil_mode=0, dilations=[1, 1], kernel_shape=[2, 2], pads=[0, 0, 0, 0], strides=[2, 2], onnx_name="/tfeb/tfeb.31/MaxPool"](%/tfeb/tfeb.30/Relu_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.pooling.MaxPool2d::tfeb.31 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:796:0
+  %/tfeb/tfeb.33/Conv_output_0 : Float(1, 2, 1, 4, strides=[8, 4, 4, 1], requires_grad=0, device=cpu) = onnx::Conv[dilations=[1, 1], group=1, kernel_shape=[1, 1], pads=[0, 0, 0, 0], strides=[1, 1], onnx_name="/tfeb/tfeb.33/Conv"](%/tfeb/tfeb.31/MaxPool_output_0, %tfeb.33.weight), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.conv.Conv2d::tfeb.33 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/conv.py:456:0
+  %/tfeb/tfeb.34/BatchNormalization_output_0 : Float(1, 2, 1, 4, strides=[8, 4, 4, 1], requires_grad=1, device=cpu) = onnx::BatchNormalization[epsilon=1.0000000000000001e-05, momentum=0.90000000000000002, training_mode=0, onnx_name="/tfeb/tfeb.34/BatchNormalization"](%/tfeb/tfeb.33/Conv_output_0, %tfeb.34.weight, %tfeb.34.bias, %tfeb.34.running_mean, %tfeb.34.running_var), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.batchnorm.BatchNorm2d::tfeb.34 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:2482:0
+  %/tfeb/tfeb.35/Relu_output_0 : Float(1, 2, 1, 4, strides=[8, 4, 4, 1], requires_grad=1, device=cpu) = onnx::Relu[onnx_name="/tfeb/tfeb.35/Relu"](%/tfeb/tfeb.34/BatchNormalization_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.activation.ReLU::tfeb.35 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1473:0
+  %/tfeb/tfeb.36/AveragePool_output_0 : Float(1, 2, 1, 1, strides=[2, 1, 1, 1], requires_grad=1, device=cpu) = onnx::AveragePool[ceil_mode=0, count_include_pad=1, kernel_shape=[1, 4], pads=[0, 0, 0, 0], strides=[1, 4], onnx_name="/tfeb/tfeb.36/AveragePool"](%/tfeb/tfeb.35/Relu_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.pooling.AvgPool2d::tfeb.36 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/pooling.py:631:0
+  %/tfeb/tfeb.37/Flatten_output_0 : Float(1, 2, strides=[2, 1], requires_grad=1, device=cpu) = onnx::Flatten[axis=1, onnx_name="/tfeb/tfeb.37/Flatten"](%/tfeb/tfeb.36/AveragePool_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.flatten.Flatten::tfeb.37 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/flatten.py:49:0
+  %/tfeb/tfeb.38/Gemm_output_0 : Float(1, 2, strides=[2, 1], requires_grad=1, device=cpu) = onnx::Gemm[alpha=1., beta=1., transB=1, onnx_name="/tfeb/tfeb.38/Gemm"](%/tfeb/tfeb.37/Flatten_output_0, %tfeb.38.weight, %tfeb.38.bias), scope: th.resources.models.ACDNetV2::/torch.nn.modules.container.Sequential::tfeb/torch.nn.modules.linear.Linear::tfeb.38 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/modules/linear.py:116:0
+  %output_0 : Float(1, 2, strides=[2, 1], requires_grad=1, device=cpu) = onnx::Softmax[axis=1, onnx_name="/output.0/Softmax"](%/tfeb/tfeb.38/Gemm_output_0), scope: th.resources.models.ACDNetV2::/torch.nn.modules.activation.Softmax::output.0 # /home/ai/miniconda3/envs/libtestenv/lib/python3.9/site-packages/torch/nn/functional.py:1858:0
+  return (%output_0)
