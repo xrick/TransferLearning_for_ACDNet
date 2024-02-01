@@ -19,10 +19,13 @@ int_8* int16_to_int8(int[] data_ary)
            max_v = arr[i];    
     }      
     
-    scaling_factor = (2 * max_v)/255 + epsilon;
+    //using 255 is because using it in quantizaion processing
+    //need to modify to 127 for the next time, just because we use
+    //int8 as our input and output
+    scaling_factor = (2 * max_v)/255 + epsilon; 
     for(int i = 0; i < len; i++)
     {
-        float tmp_v = data_ary[i]/255 + zero_offset;
+        float tmp_v = data_ary[i]/scaling_factor + zero_offset;
         ret_ary[i] = int_8(math.floor(tmp_v)); //we can using math.ceil() too see which is better.
     }
     return ret_ary;
