@@ -47,35 +47,37 @@ void soundsetup(){
             return;
         }
     }
-
+   
     //Rick modify: add the following 24/01/25
-    // {//construct NN structures
-    //     static tflite::MicroMutableOpResolver<8> static_resolver;
-    //     static_resolver.AddConv2D();    
-    //     static_resolver.AddDepthwiseConv2D();
-    //     static_resolver.AddFullyConnected();
-    //     static_resolver.AddReshape();
-    //     static_resolver.AddSoftmax();
-    //     static_resolver.AddAveragePool2D();
-    //     static_resolver.AddMaxPool2D();
-    //     static_resolver.AddTranspose();
-    //     resolver = &static_resolver;
-    //     printf("Network build done and Resolver done\n");
-    // }
-    {
+    {//construct NN structures
         static tflite::MicroMutableOpResolver<9> static_resolver;
-        static_resolver.AddQuantize();//new add, and need to test where to put it
-        static_resolver.AddConv2D(tflite::Register_CONV_2D_INT16());    
-        static_resolver.AddDepthwiseConv2D(tflite::Register_DEPTHWISE_CONV_2D_INT8());
-        static_resolver.AddFullyConnected(tflite::Register_FULLY_CONNECTED_INT8());
+        static_resolver.AddQuantize();
+        static_resolver.AddConv2D();    
+        static_resolver.AddDepthwiseConv2D();
+        static_resolver.AddFullyConnected();
+        static_resolver.AddDeQuantize();
         static_resolver.AddReshape();
-        static_resolver.AddSoftmax(tflite::Register_SOFTMAX_INT8_INT16());
-        static_resolver.AddAveragePool2D(tflite::Register_AVERAGE_POOL_2D_INT16());
-        static_resolver.AddMaxPool2D(tflite::Register_MAX_POOL_2D_INT8());
+        // static_resolver.AddSoftmax();
+        static_resolver.AddAveragePool2D();
+        static_resolver.AddMaxPool2D();
         static_resolver.AddTranspose();
         resolver = &static_resolver;
-        Serial.println("Network build done and Resolver done\n");
+        printf("Network build done and Resolver done\n");
     }
+    // {
+    //     static tflite::MicroMutableOpResolver<9> static_resolver;
+    //     static_resolver.AddQuantize();//new add, and need to test where to put it
+    //     static_resolver.AddConv2D(tflite::Register_CONV_2D_INT16());    
+    //     static_resolver.AddDepthwiseConv2D(tflite::Register_DEPTHWISE_CONV_2D_INT8());
+    //     static_resolver.AddFullyConnected(tflite::Register_FULLY_CONNECTED_INT8());
+    //     static_resolver.AddReshape();
+    //     static_resolver.AddSoftmax(tflite::Register_SOFTMAX_INT8_INT16());
+    //     static_resolver.AddAveragePool2D(tflite::Register_AVERAGE_POOL_2D_INT16());
+    //     static_resolver.AddMaxPool2D(tflite::Register_MAX_POOL_2D_INT8());
+    //     static_resolver.AddTranspose();
+    //     resolver = &static_resolver;
+    //     Serial.println("Network build done and Resolver done\n");
+    // }
 
     {//initializing model interpreter
         
@@ -132,7 +134,7 @@ void soundsetup(){
         else if (output->type == kTfLiteFloat16) printf("float16 output\n");
         else if (output->type == kTfLiteFloat32) printf("float32 output\n");    
         else printf("Unknown output type\n");
-        TfLiteTensor* output = get_output(); 
+        //TfLiteTensor* output = get_output(); 
         // Keep track of how many inferences we have performed.
         inference_count = 0;
     }
