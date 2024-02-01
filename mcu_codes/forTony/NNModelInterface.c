@@ -55,7 +55,7 @@ void soundsetup(){
         static_resolver.AddConv2D();    
         static_resolver.AddDepthwiseConv2D();
         static_resolver.AddFullyConnected();
-        static_resolver.AddDeQuantize();
+        static_resolver.AddDequantize();
         static_resolver.AddReshape();
         // static_resolver.AddSoftmax();
         static_resolver.AddAveragePool2D();
@@ -171,6 +171,7 @@ struct RetResult analysissound(uint32_t input_number, int8_t* sound, uint32_t so
         //set local variables
         size_t max_i = 0;
         int8_t max_v = -128;
+        int8_t min_v = -127;
         size_t output_dimensions = 1;
         output = interpreter->output(0);
         //calculating output dimensions
@@ -183,6 +184,7 @@ struct RetResult analysissound(uint32_t input_number, int8_t* sound, uint32_t so
         for (size_t i = 0; i < output_dimensions; i++) 
         {
             if (output->data.int8[i] > max_v) {
+                min_v = max_v; //put previous va
                 max_v = output->data.int8[i];
                 max_i = i;
             }
@@ -191,7 +193,10 @@ struct RetResult analysissound(uint32_t input_number, int8_t* sound, uint32_t so
         res.inputNumber = input_number;
         res.max_idx = max_i;
         res.max_value = max_v;
+        res.values = output->data.int8[i];
         return res;
+      }
+  }
     }
     
 }
