@@ -5,8 +5,9 @@ def quantize_int8(x, axis):
   '''Quantization into int8_t precision, operating on x along axis'''
 
   scaling_factor_shape = tuple(np.append([len(x)],np.ones(x.ndim - 1, dtype = int)))
-  epsilon = 0.000000001
-  x_scaling_factor = (2 * np.max(np.abs(x), axis) / 255) + epsilon
+  epsilon = 0.000001#0.000000001
+  # x_scaling_factor = (2 * np.max(np.abs(x), axis) / 255) + epsilon
+  x_scaling_factor = (2 * np.max(np.abs(x), axis) / 127) + epsilon
   x_scaling_factor = x_scaling_factor.reshape(scaling_factor_shape)
   x_zero_offset = -0.5
   result = (x / x_scaling_factor) + x_zero_offset
