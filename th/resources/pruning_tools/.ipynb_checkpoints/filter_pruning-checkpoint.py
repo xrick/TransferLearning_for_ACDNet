@@ -76,6 +76,10 @@ class Taylor:
         if self.opt.prune_all:
             for layer, (name, module) in enumerate(self.net.sfeb._modules.items()):
                 # print(layer_index);
+                # if self.opt.device == "mps":
+                #     x = x.cpu()
+                    # x = torch.tensor(x)
+                    # x = x.type(torch.FloatTensor) # use apple mp2
                 x = module(x);
                 if isinstance(module, torch.nn.modules.conv.Conv2d):
                     # Do not want to reduce the output channels of 2nd conv less than 32 to keep the network working
