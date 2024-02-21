@@ -210,8 +210,8 @@ class ACDNetQuant(nn.Module):
         x = self.tfeb(x);
         #DeQuantize features before feeding to softmax
         x = self.dequant(x);
-        # y = self.output[0](x);
-        return x;
+        y = self.output[0](x);
+        return y;
 
     def make_layers(self, in_channels, out_channels, kernel_size, stride=(1,1), padding=0, bias=False):
         conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=kernel_size, stride=stride, padding=padding, bias=bias);
