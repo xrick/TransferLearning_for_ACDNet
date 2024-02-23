@@ -177,6 +177,11 @@ int8_t * analysissound(uint32_t input_number, int8_t* sound, uint32_t sound_leng
     if (invoke_status != kTfLiteOk) 
     {
         error_reporter->Report("Invoke failed");
+        
+        // MicroPrintf("Node %s (number %d) failed to invoke with status %d",
+        //               OpNameFromRegistration(registration), i, invoke_status);
+      
+    
         return nullptr;
     }
 		printf("Invoke, ticks = %d\n", ticks);
