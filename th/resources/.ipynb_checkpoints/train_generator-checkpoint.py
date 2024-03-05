@@ -12,7 +12,7 @@ class Generator():
     def __init__(self, samples, labels, options):
         random.seed(42);
         #Initialization
-        self.data = [(samples[i], labels[i]) for i in range(0, len(samples))];
+        self.data = [(samples[i], labels[i]) for i in range (0, len(samples))];
         self.opt = options;
         self.batch_size = options.batchSize;
         self.preprocess_funcs = self.preprocess_setup();
