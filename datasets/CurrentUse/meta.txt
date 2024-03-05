@@ -1,5 +1,11 @@
 uec-iot-10 dataset
 TrainSet:
+	Positive:
+		1. Alarm
+		2. Help Speech
+		3. Moan Sound
+	Negative:
+		
 
 ValidationSet:
 
