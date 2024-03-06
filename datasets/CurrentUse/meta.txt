@@ -1,8 +1,13 @@
 uec-iot-10 dataset
 TrainSet:
 	Positive:
-		1. Alarm
+		1. Alarm:52
 		2. Help Speech
+			Mandrain:
+			English:
+			Janpan:
+			Kondong:
+			Hakka:
 		3. Moan Sound
 	Negative:
 		

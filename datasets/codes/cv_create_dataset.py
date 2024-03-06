@@ -1,14 +1,14 @@
-
 import sys
 import os
 import subprocess
-
 import glob
 import numpy as np
 import wavio
 
+sys.path.append('../../');
+from Libs.SharedLibs import getFileList;
 
-def main(dataset_dir=None, output_path=None, if_convert_sr=None, sr_list=[44100, 20000, 16000], folds=5):
+def main(dataset_dir=None, fold_dirs=None, output_path=None, if_convert_sr=None, sr_list=[44100, 20000, 16000], folds=5):
     # mainDir = os.getcwd();
     # esc50_path = os.path.join(mainDir, 'datasets/esc50');
 
@@ -32,7 +32,7 @@ def main(dataset_dir=None, output_path=None, if_convert_sr=None, sr_list=[44100,
     #        src_path = os.path.join(esc50_path, 'ESC-50-master', 'audio');
     #    else:
     #        src_path = os.path.join(esc50_path, 'wav{}'.format(sr // 1000));
-    create_dataset(dataset_dir,output_path,folds);
+    create_dataset(dataset_dir,fold_dirs, output_path, folds);
 
 
 def convert_sr(src_path, dst_path, sr):
@@ -44,7 +44,7 @@ def convert_sr(src_path, dst_path, sr):
         subprocess.call('ffmpeg -i {} -ac 1 -ar {} -loglevel error -y {}'.format(
             src_file, sr, dst_file), shell=True);
 
-def create_dataset(src_path, output_path=None, folds=5):
+def create_dataset(src_path=None, fold_dirs=None, output_path=None, folds=5):
     print('* {} -> {}'.format(src_path, output_path))
     train_dataset = {};
 
@@ -66,6 +66,10 @@ def create_dataset(src_path, output_path=None, folds=5):
         train_dataset['fold{}'.format(fold)]['labels'] = train_labels
 
     np.savez(output_path, **train_dataset)
+
+def create_wav_list(wav_src_path)->list:
+    wav_list = [];
+    return wav_list;
 
 
 if __name__ == '__main__':
