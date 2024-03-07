@@ -1,27 +1,15 @@
 ////tensorflow libraries include
-//Rick modify:24/03/07
-// #include "tensorflow/lite/micro/micro_error_reporter.h"
-#ifndef MEMORY_PRINT
-#define MEMORY_PRINT
-#endif
-
-#ifdef MEMORY_PRINT
-#include "recording_micro_interpreter.h"
-#else
-#include "tensorflow/lite/micro/micro_interpreter.h"
-#endif
-
 #include "tensorflow/lite/micro/kernels/micro_ops.h"
-
+//Rick modify:24/01/25
+// #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/tflite_bridge/micro_error_reporter.h"
-
+#include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 
 ////include model
 #include "uec_alarm_model.h"
 #include "sharedData.h"
-#include "uec_alarm_model.c"
 
 ////global variables declaration
 tflite::ErrorReporter* error_reporter = nullptr;
@@ -33,16 +21,16 @@ TfLiteTensor* output = nullptr;
 int inference_count;
 uint32_t inference_time;
 int32_t _input_number = 0;
-constexpr int kTensorArenaSize = g_arena_size + 10000; //+10000;
+constexpr int kTensorArenaSize = 318169;
 uint8_t tensor_arena[kTensorArenaSize];
 // NeuralNetworkFeatureProvider* featureProvider = nullptr;
 // NeuralNetworkScores* scores = nullptr;
 
 ////functions declaration
 void soundsetup();
-int8_t * analysissound(uint32_t sound_number, int8_t* sounds, uint32_t sound_length);
-extern uint32_t ticks;
- void soundsetup(){
+struct RetResult analysissound(uint32_t sound_number, int8_t* sounds, uint32_t sound_length);
+
+void soundsetup(){
     //initial error_report and 
     {//
         static tflite::MicroErrorReporter micro_error_reporter;
@@ -59,11 +47,10 @@ extern uint32_t ticks;
             return;
         }
     }
-
+   
     //Rick modify: add the following 24/01/25
-		
-     {
-			 static tflite::MicroMutableOpResolver<9> static_resolver;
+    {//construct NN structures
+        static tflite::MicroMutableOpResolver<9> static_resolver;
         static_resolver.AddQuantize();
         static_resolver.AddConv2D();    
         static_resolver.AddDepthwiseConv2D();
@@ -76,35 +63,29 @@ extern uint32_t ticks;
         static_resolver.AddTranspose();
         resolver = &static_resolver;
         printf("Network build done and Resolver done\n");
-     }
-		/*
-    {
-        static tflite::MicroMutableOpResolver<10> static_resolver;
-        
-				
-        static_resolver.AddConv2D(tflite::Register_CONV_2D_INT8());    
-        static_resolver.AddDepthwiseConv2D(tflite::Register_DEPTHWISE_CONV_2D_INT8());
-        static_resolver.AddFullyConnected(tflite::Register_FULLY_CONNECTED_INT8());
-			static_resolver.AddQuantize();//new add, and need to test where to put it
-        static_resolver.AddReshape();
-        static_resolver.AddSoftmax(tflite::Register_SOFTMAX_INT8());
-			static_resolver.AddDequantize(); 
-        static_resolver.AddAveragePool2D(tflite::Register_AVERAGE_POOL_2D_INT8());
-        static_resolver.AddMaxPool2D(tflite::Register_MAX_POOL_2D_INT8());
-        static_resolver.AddTranspose();
-        resolver = &static_resolver;
-        printf("Network build done and Resolver done\n");
     }
-		*/
+    // {
+    //     static tflite::MicroMutableOpResolver<9> static_resolver;
+    //     static_resolver.AddQuantize();//new add, and need to test where to put it
+    //     static_resolver.AddConv2D(tflite::Register_CONV_2D_INT16());    
+    //     static_resolver.AddDepthwiseConv2D(tflite::Register_DEPTHWISE_CONV_2D_INT8());
+    //     static_resolver.AddFullyConnected(tflite::Register_FULLY_CONNECTED_INT8());
+    //     static_resolver.AddReshape();
+    //     static_resolver.AddSoftmax(tflite::Register_SOFTMAX_INT8_INT16());
+    //     static_resolver.AddAveragePool2D(tflite::Register_AVERAGE_POOL_2D_INT16());
+    //     static_resolver.AddMaxPool2D(tflite::Register_MAX_POOL_2D_INT8());
+    //     static_resolver.AddTranspose();
+    //     resolver = &static_resolver;
+    //     Serial.println("Network build done and Resolver done\n");
+    // }
+
     {//initializing model interpreter
         
-        #ifndef MEMORY_PRINT
+        //Rick modify: no need error_reporter
+        // static tflite::MicroInterpreter static_interpreter(
+        // model, *resolver, tensor_arena, kTensorArenaSize, error_reporter);
         static tflite::MicroInterpreter static_interpreter(
         model, *resolver, tensor_arena, kTensorArenaSize);
-        #else
-        tflite::RecordingMicroInterpreter interpreter(
-        model, *resolver, tensor_arena, kTensorArenaSize);
-        #endif
 
         interpreter = &static_interpreter;
         printf("Interpreter done\n");    
@@ -118,11 +99,6 @@ extern uint32_t ticks;
         printf("Allocated tensors\n");
         //please write down the following output to get real size of used arena_size
         printf("Arena used %u bytes\n", interpreter->arena_used_bytes());
-
-        #ifdef MEMORY_PRINT
-        // Print out detailed allocation information:
-        interpreter.GetMicroAllocator().PrintAllocations();
-        #endif
     }
 
     {//get information(type and dimension) about model input and output
@@ -158,7 +134,6 @@ extern uint32_t ticks;
         else if (output->type == kTfLiteFloat16) printf("float16 output\n");
         else if (output->type == kTfLiteFloat32) printf("float32 output\n");    
         else printf("Unknown output type\n");
-				// mark out by Tony Wu
         //TfLiteTensor* output = get_output(); 
         // Keep track of how many inferences we have performed.
         inference_count = 0;
@@ -168,76 +143,60 @@ extern uint32_t ticks;
 
 }
 
-int8_t * analysissound(uint32_t input_number, int8_t* sound, uint32_t sound_length)  {
+struct RetResult analysissound(uint32_t input_number, int8_t* sound, uint32_t sound_length){
     /*
     input_number:the number of input for associating input and output
     sounds: the sound signal
     sound_length: length of sound signal
     */
     // Run the model on the sound input and make sure it succeeds.
-	// modified by Tony
-			RetResult res;
-			res.inputNumber = 0;
-      res.max_idx = 0;
-      res.max_value = -128;
-		
+
      _input_number = input_number;
      //set sound to input->data
-   	for (uint32_t i = 0; i < sound_length; i++) 
+    for (uint32_t i = 0; i < buffer_size; i++) 
     {
-        input->data.int8[i] = sound[i];
+        input->data.int8[i] = sounds[i];
     }
-		printf("copy data, ticks = %d\n", ticks);
-		
     //call  interpreter to do model inference
     TfLiteStatus invoke_status = interpreter->Invoke();
     //first check whether model inference failed
     if (invoke_status != kTfLiteOk) 
     {
         error_reporter->Report("Invoke failed");
-        
-        // MicroPrintf("Node %s (number %d) failed to invoke with status %d",
-        //               OpNameFromRegistration(registration), i, invoke_status);
-      
-    
-        return nullptr;
+        return;
     }
-		printf("Invoke, ticks = %d\n", ticks);
-		
     //to do model inference and get output
     if(invoke_status == kTfLiteOk)
     {
         //set local variables
         size_t max_i = 0;
-				int8_t min_v = 127;
         int8_t max_v = -128;
+        int8_t min_v = -127;
         size_t output_dimensions = 1;
-			
-        tflite:TfLiteTensor* output = interpreter->output(0);
-			  //printf("dim size=%d\n", output->dims->size);
+        output = interpreter->output(0);
         //calculating output dimensions
-         for (int i = 0; i < output->dims->size; i++) 
+        for (int i = 0; i < output->dims->size; i++) 
         {
             // printf("output->dims->data[%d]: %u\n", i, output->dims->data[i]);
             output_dimensions *= output->dims->data[i];
         }
         //calculate the result
-				/*
-				//printf("output dimensions = %d\n", output_dimensions);
         for (size_t i = 0; i < output_dimensions; i++) 
         {
-					//printf("dim %d, value = %d\n", i, output->data.int8[i]);
             if (output->data.int8[i] > max_v) {
+                min_v = max_v; //put previous va
                 max_v = output->data.int8[i];
                 max_i = i;
             }
-            if(output->data.int8[i] < min_v){
-                min_v = output->data.int8[i];
-            }
         }
-        */
-        
+        RetResult res;
+        res.inputNumber = input_number;
+        res.max_idx = max_i;
+        res.max_value = max_v;
+        res.values = output->data.int8[i];
+        return res;
+      }
+  }
     }
-		
-    return output->data.int8;
+    
 }

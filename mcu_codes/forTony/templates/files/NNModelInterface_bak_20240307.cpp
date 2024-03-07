@@ -1,20 +1,9 @@
 ////tensorflow libraries include
-//Rick modify:24/03/07
-// #include "tensorflow/lite/micro/micro_error_reporter.h"
-#ifndef MEMORY_PRINT
-#define MEMORY_PRINT
-#endif
-
-#ifdef MEMORY_PRINT
-#include "recording_micro_interpreter.h"
-#else
-#include "tensorflow/lite/micro/micro_interpreter.h"
-#endif
-
 #include "tensorflow/lite/micro/kernels/micro_ops.h"
-
+//Rick modify:24/01/25
+// #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/tflite_bridge/micro_error_reporter.h"
-
+#include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 
@@ -98,13 +87,11 @@ extern uint32_t ticks;
 		*/
     {//initializing model interpreter
         
-        #ifndef MEMORY_PRINT
+        //Rick modify: no need error_reporter
+        // static tflite::MicroInterpreter static_interpreter(
+        // model, *resolver, tensor_arena, kTensorArenaSize, error_reporter);
         static tflite::MicroInterpreter static_interpreter(
         model, *resolver, tensor_arena, kTensorArenaSize);
-        #else
-        tflite::RecordingMicroInterpreter interpreter(
-        model, *resolver, tensor_arena, kTensorArenaSize);
-        #endif
 
         interpreter = &static_interpreter;
         printf("Interpreter done\n");    
@@ -118,11 +105,6 @@ extern uint32_t ticks;
         printf("Allocated tensors\n");
         //please write down the following output to get real size of used arena_size
         printf("Arena used %u bytes\n", interpreter->arena_used_bytes());
-
-        #ifdef MEMORY_PRINT
-        // Print out detailed allocation information:
-        interpreter.GetMicroAllocator().PrintAllocations();
-        #endif
     }
 
     {//get information(type and dimension) about model input and output

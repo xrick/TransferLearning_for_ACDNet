@@ -22,7 +22,7 @@ def main(dataset_dir=None, fold_dirs=None, output_path=None, if_convert_sr=None,
             # if sr == 44100:
             #     continue
             # else:
-            #     convert_sr(os.path.join(esc50_path, 'ESC-50-master', 'audio'),
+
             #                os.path.join(esc50_path, 'wav{}'.format(sr // 1000)),
             #                sr);
 
